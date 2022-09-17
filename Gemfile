@@ -58,6 +58,7 @@ group :development, :test do
   gem 'rubocop', require: false
   gem 'rubocop-rails', require: false
   gem 'rubocop-rspec', require: false
+  gem 'rspec-rails'
   gem 'pry'
   gem "faker"
 end
@@ -78,7 +79,6 @@ group :test do
   gem 'capybara'
   gem 'selenium-webdriver'
   gem 'webdrivers'
-  gem 'rspec-rails'
   gem 'factory_bot'
   gem 'simplecov', require: false
 end
