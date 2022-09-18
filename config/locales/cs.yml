@@ -151,8 +151,8 @@ cs:
     select:
       prompt: Prosím vyberte si
     submit:
-      create: Vytvořit
-      submit: Uložit
+      create: Vytvořit účet
+      login: Přihlásit se
       update: Aktualizovat
   number:
     currency:
