@@ -1,5 +1,14 @@
 cs:
   activerecord:
+    attributes:
+      user:
+        name: 'Jméno'
+        surname: 'Příjmení'
+        email: 'E-mail'
+        password: 'Heslo'
+        password_confirmation: 'Potvrzení hesla'
+        current_password: 'Aktuální heslo'
+
     errors:
       messages:
         record_invalid: 'Validace je neúspešná: %{errors}'

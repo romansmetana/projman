@@ -54,6 +54,10 @@ cs:
       send_instructions: "Za několik minut obdržíte email s instrukcemi, jak odemknout svůj účet."
       send_paranoid_instructions: "Pokud váš účet existuje, obdržíte e-mail s instrukcemi pro jeho odemčení."
       unlocked: "Váš účet byl úspěšně odemknut. Nyní jste přihlášen(a)."
+    pages:
+      sign_in: Přihlásit se
+      sign_up: Zaregistrovat účet
+      edit: Upravit
   errors:
     messages:
       already_confirmed: "byl již potvrzen, prosím, zkuste se přihlásit"
