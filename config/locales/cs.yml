@@ -154,6 +154,14 @@ cs:
       create: Vytvořit účet
       login: Přihlásit se
       update: Aktualizovat
+    links:
+      sign_in: Přihlásit se
+      sign_up: Vytvořit účet
+      sign_out: Odhlásit se
+      delete_account: Zrušit můj účet
+
+      navigation: 
+        back: Zpátky
   number:
     currency:
       format:
