@@ -13,3 +13,29 @@
  *= require_tree .
  *= require_self
  */
+
+ .alert-danger {
+    color: #842029;
+    background-color: #f8d7da;
+    position: relative;
+    padding-right: 3rem;
+    padding: 1rem 1rem;
+    margin-bottom: 1rem;
+ 
+    border-color: #f5c2c7;
+    border: 1px solid transparent;
+    border-radius: .25rem;
+ }
+ 
+ .alert-notice {
+    color: #0f5132;
+    background: #d1e7dd;
+    position: relative;
+    padding-right: 3rem;
+    padding: 1rem 1rem;
+    margin-bottom: 1rem;
+ 
+    border-color: #badbcc;
+    border: 1px solid transparent;
+    border-radius: .25rem;
+ }
