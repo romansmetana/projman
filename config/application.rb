@@ -13,6 +13,8 @@ module Projman
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 7.0
 
+    I18n.available_locales = [:en, :cs]
+    I18n.default_locale = :cs
     # Configuration for the application, engines, and railties goes here.
     #
     # These settings can be overridden in specific environments using the files

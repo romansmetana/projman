@@ -1,0 +1,38 @@
+cs:
+  simple_form:
+    "yes": 'Ano'
+    "no": 'Ne'
+    required:
+      text: 'Pole musí být vyplněno'
+      mark: '*'
+      # You can uncomment the line below if you need to overwrite the whole required html.
+      # When using html, text and mark won't be used.
+      # html: '<abbr title="required">*</abbr>'
+    error_notification:
+      default_message: "Zkontrolujte prosím níže uvedené problémy:"
+    labels:
+      defaults:
+        name: 'Jméno'
+        surname: 'Příjmení'
+        email: 'E-mail'
+        password: 'Heslo'
+        password_confirmation: 'Potvrzení hesla'
+        current_password: 'Aktuální heslo'
+      user:
+        new:
+         email: 'E-mail pro přihlášení'
+        edit:
+          email: 'E-mail.'
+    hints:
+      defaults:
+        edit:
+          username: 'User name to sign in.'
+          password: "Vaše nové heslo"
+          password_confirmation: "Potvrďte své nové heslo"
+          current_password: "Potřebujeme vaše aktuální heslo k potvrzení vašich změn"
+    include_blanks:
+      defaults:
+        age: 'Rather not say'
+    prompts:
+      defaults:
+        age: 'Select your age'
