@@ -1,8 +1,10 @@
+# frozen_string_literal: true
+
 class Tag < ApplicationRecord
-    belongs_to :user
+  belongs_to :user
 
-    has_many :task_tags
-    has_many :tasks, through: :task_tags
+  has_many :task_tags
+  has_many :tasks, through: :task_tags
 
-    validates :title, presence: true
+  validates :title, presence: true
 end

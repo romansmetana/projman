@@ -1,7 +1,9 @@
-class Project < ApplicationRecord
-    belongs_to :user
-    has_many :tasks, dependent: :destroy
+# frozen_string_literal: true
 
-    validates :title, presence: true
-    validates :position, numericality: { only_integer: true }
+class Project < ApplicationRecord
+  belongs_to :user
+  has_many :tasks, dependent: :destroy
+
+  validates :title, presence: true
+  validates :position, numericality: { only_integer: true }
 end
