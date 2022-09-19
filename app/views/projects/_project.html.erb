@@ -2,7 +2,7 @@
   <%= turbo_frame_tag dom_id(project) do %>
     <div class="d-flex justify-content-between">
       <%= link_to project.title, edit_project_path(project) %>
-      <%= button_to "Delete", project_path(project), method: :delete %>
+      <%= button_to t("helpers.submit.project.delete"), project_path(project), method: :delete %>
     </div>
   <% end %>
 </ul>

@@ -8,6 +8,8 @@ cs:
         password: 'Heslo'
         password_confirmation: 'Potvrzení hesla'
         current_password: 'Aktuální heslo'
+      project:
+        title: 'Název projektu'
 
     errors:
       messages:
@@ -163,6 +165,9 @@ cs:
       create: Vytvořit účet
       login: Přihlásit se
       update: Aktualizovat
+      project:
+        create: Vytvořit projekt
+        delete: Smazat
     links:
       sign_in: Přihlásit se
       sign_up: Vytvořit účet
