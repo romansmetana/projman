@@ -14,6 +14,7 @@ class ProjectsController < ApplicationController
 
   def create
     @project = current_user.projects.build(project_params)
+    @project.set_position
     respond_to do |format|
       if @project.save
         format.turbo_stream
