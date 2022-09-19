@@ -1,3 +1,5 @@
 <ul id="<%= "#{dom_id(project)}_item" %>">
-    <%= project.title %>
+  <%= turbo_frame_tag dom_id(project) do %>
+    <%= link_to project.title, edit_project_path(project) %>
+  <% end %>
 </ul>
