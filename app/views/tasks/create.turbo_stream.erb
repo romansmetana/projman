@@ -1,0 +1,7 @@
+<%= turbo_stream.prepend "#{dom_id(@task.project || @task)}_block" do %>
+  <%= render 'tasks/task', task: @task %>
+<% end %>
+<%= turbo_stream.replace "#{dom_id(Task.new)}_form" do %>
+  <%= render 'tasks/form', task: Task.new %>
+<% end %>
+<%= turbo_stream.replace("flash-container", partial: 'shared/alerts') %>

@@ -23,6 +23,11 @@ cs:
         create: Projekt byl úspěšně vytvořen
         update: Projekt byl úspěšně aktualizován
         destroy: Projekt byl úspěšně smazán
+    task:
+      success:
+        create: Úkol byl úspěšně vytvořen
+        update: Úkol byl úspěšně aktualizován
+        destroy: Úkol byl úspěšně smazán
   date:
     abbr_day_names:
     - Ne

@@ -1,0 +1,8 @@
+<ul id="<%= "#{dom_id(task)}_item" %>">
+  <%= turbo_frame_tag dom_id(task) do %>
+    <div class="d-flex justify-content-between">
+      <%= link_to task.title, edit_task_path(task) %>
+      <%= button_to t("helpers.submit.project.delete"), task_path(task), method: :delete %>
+    </div>
+  <% end %>
+</ul>

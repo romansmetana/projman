@@ -1,5 +1,5 @@
 <%= render 'form', project: Project.new %>
-
 <div id="projects">
   <%= render @projects %>
 </div>
+<%= render 'tasks/form', task: Task.new %>
