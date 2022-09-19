@@ -41,7 +41,15 @@ class ProjectsController < ApplicationController
     end
   end
 
-  def destroy; end
+  def destroy
+    @project.destroy
+    respond_to do |format|
+      format.turbo_stream do
+        render turbo_stream: turbo_stream.remove("#{helpers.dom_id(@project)}_item")
+      end
+      format.html { redirect_to root_path }
+    end
+  end
 
   private
 
