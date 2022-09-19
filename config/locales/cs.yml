@@ -17,6 +17,12 @@ cs:
         restrict_dependent_destroy:
           has_one: Nemůžu smazat položku protože existuje závislá/ý/é %{record}
           has_many: Nemůžu smazat položku protože existuje závislé/ý %{record}
+  controllers:
+    project:
+      success:
+        create: Projekt byl úspěšně vytvořen
+        update: Projekt byl úspěšně aktualizován
+        destroy: Projekt byl úspěšně smazán
   date:
     abbr_day_names:
     - Ne

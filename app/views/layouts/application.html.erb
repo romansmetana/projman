@@ -12,7 +12,9 @@
   </head>
   <body>
     <div class="container">
-      <%= render "shared/devise_alerts", notice: notice, alert: alert %>
+      <div id="flash-container">
+        <%= render "shared/devise_alerts", notice: notice, alert: alert %>
+      </div>
       <%= yield %>
     </div>
   </body>
