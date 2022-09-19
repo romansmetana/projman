@@ -7,6 +7,6 @@ class Task < ApplicationRecord
   has_many :task_tags
   has_many :tags, through: :task_tags
 
-  validates :title, :is_done, presence: true
+  validates :title, presence: true
   validates :description, length: { minimum: 1, maximum: 300 }
 end
