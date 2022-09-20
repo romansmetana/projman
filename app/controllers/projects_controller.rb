@@ -17,8 +17,8 @@ class ProjectsController < ApplicationController
     @project.set_position
     respond_to do |format|
       if @project.save
-        flash[:success] = t("controllers.project.success.create")
-        format.turbo_stream 
+        flash[:success] = t('controllers.project.success.create')
+        format.turbo_stream
       else
         format.turbo_stream do
           render turbo_stream: turbo_stream.replace("#{helpers.dom_id(@project)}_form", partial: 'form',
@@ -33,7 +33,7 @@ class ProjectsController < ApplicationController
   def update
     respond_to do |format|
       if @project.update(project_params)
-        flash[:success] = t("controllers.project.success.update")
+        flash[:success] = t('controllers.project.success.update')
         format.turbo_stream
         format.html { redirect_to root_path }
       else
@@ -48,8 +48,8 @@ class ProjectsController < ApplicationController
   def destroy
     @project.destroy
     respond_to do |format|
-      flash[:success] = t("controllers.project.success.destroy")
-      format.turbo_stream 
+      flash[:success] = t('controllers.project.success.destroy')
+      format.turbo_stream
       format.html { redirect_to root_path }
     end
   end

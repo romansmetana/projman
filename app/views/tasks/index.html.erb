@@ -1,3 +1,4 @@
-<% @tasks.each do |t| %>
-    <%= t.title %>
-<% end %>
+<%= render 'form', task: Task.new %>
+<div id="tasks">
+    <%= render @tasks %>
+</div>
