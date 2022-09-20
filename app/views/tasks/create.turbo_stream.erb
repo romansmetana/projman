@@ -1,3 +1,8 @@
+<% if @task.project %>
+  <%= turbo_stream.prepend "#{dom_id(@task.project)}_tasks" do %>
+    <%= render 'tasks/task', task: @task %>
+  <% end %>
+<% end %>
 <%= turbo_stream.prepend "tasks" do %>
   <%= render 'task', task: @task %>
 <% end %>
