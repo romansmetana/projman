@@ -1,0 +1,18 @@
+<div class="container bg-warning p-0">
+  <div class="row">
+    <div class="h1 col-lg-6 ps-4">
+      <%= link_to 'Pr. Mngr', root_path, class: "text-dark navbar-brand w-100 h-100 m-0 p-0 d-flex align-items-center justify-content-start"%>
+    </div>
+    <div class="col-lg-6 d-flex align-items-center justify-content-end pe-4">
+      <div class="own-drop dropdown">
+        <a class="h4 fw-light own-drop-link tn dropdown-toggle text-white" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+          <%= current_user.name %>
+        </a>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+          <li><%= link_to "Edit profile", edit_user_registration_path, class: "dropdown-item" %></li>
+          <li><%= link_to 'Logout', destroy_user_session_path, class: "dropdown-item" %></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
