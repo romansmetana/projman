@@ -13,6 +13,9 @@ cs:
       task:
         title: 'Název úkolu'
         description: 'Popis'
+  is_done:
+    false: 'Nedokončeno'
+    true: 'Dokončeno'
 
     errors:
       messages:

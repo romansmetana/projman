@@ -4,9 +4,9 @@
       <%= link_to task.title, edit_task_path(task) %>
       <div>
         <% if task.is_done? %>
-          <%= button_to "incomplete", task_path(task, task: { is_done: 'false'}), method: :patch %>
+          <%= button_to t("is_done.false"), task_path(task, task: { is_done: 'false'}), method: :patch %>
         <% else %>
-          <%= button_to "complete", task_path(task, task: { is_done: 'true'}), method: :patch %>
+          <%= button_to t("is_done.true"), task_path(task, task: { is_done: 'true'}), method: :patch %>
         <% end %>
         <%= button_to t("helpers.submit.project.delete"), task_path(task), method: :delete %>
       </div>
