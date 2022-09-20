@@ -37,6 +37,8 @@ cs:
       action:
         create: Přidat nový projekt
         show: Zobrazit více
+      notification:
+        destroy: Pokud smažete projekt, smažou se také všechny jeho úkoly! Chcete pokračovat?
     task:
       success:
         create: Úkol byl úspěšně vytvořen
@@ -44,11 +46,15 @@ cs:
         destroy: Úkol byl úspěšně smazán
       action:
         create: Přidat nový úkol
+      notification:
+        destroy: Chcete smazat tento úkol?
     tag:
       success:
         create: Tag byl úspěšně vytvořen
         update: Tag byl úspěšně aktualizován
         destroy: Tag byl úspěšně smazán
+      notification:
+        destroy: Chcete smazat tento tag?
   date:
     abbr_day_names:
     - Ne

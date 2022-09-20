@@ -38,6 +38,7 @@ cs:
       updated: "Vaše heslo bylo úspěšně změněno. Nyní jste přihlášen(a)."
       updated_not_active: "Vaše heslo bylo změněno."
     registrations:
+      destroy: Pokud smažete účet, budou smazána další data včetně všech  úkolů, projektů a tagů. Chcete pokračovat?
       destroyed: "Nashle! Váš účet byl úspěšně zrušen. Doufáme, že se brzy opět uvidíme."
       signed_up: "Vítejte! Registrace byla úspěšná."
       signed_up_but_inactive: "Registrace byla úspěšná. Nicméně se nemůžete přihlásit, protože váš účet dosud nebyl aktivován."

@@ -4,7 +4,7 @@
       <div class="d-flex justify-content-between p-1">
         <h5 class="mb-0"><%= link_to project.title, project_path(project) %></h5>
         <%= button_to t("helpers.submit.project.delete"), project_path(project), method: :delete,
-          class: 'btn btn-sm p-3 bg-danger bg-opacity-10 ' %>
+          class: 'btn btn-sm p-3 bg-danger bg-opacity-10 ', form: { data: { turbo_confirm: t("controllers.project.notification.destroy") } } %>
       </div>
       <div class="p-1 border-top">
         <div class="d-flex justify-content-center">

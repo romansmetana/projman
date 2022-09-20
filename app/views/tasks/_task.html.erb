@@ -32,7 +32,7 @@
             class: 'btn btn-sm p-1 bg-success bg-opacity-25 ' %></p>
           <% end %>
           <p><%= button_to t("helpers.submit.delete"), task_path(task), method: :delete,
-          class: 'btn btn-sm p-1 bg-danger bg-opacity-10 ' %></p>
+          class: 'btn btn-sm p-1 bg-danger bg-opacity-10 ', form: { data: { turbo_confirm: t("controllers.task.notification.destroy") } } %></p>
         </div>
       </div>
     </div>
