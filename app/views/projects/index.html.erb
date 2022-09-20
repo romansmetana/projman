@@ -1,4 +1,10 @@
-<%= render 'form', project: Project.new %>
+<div class="col-sm-6">
+  <%= link_to 'Add new project', new_project_path, 
+    class: 'btn btn-sm btn-warning', data: {turbo_frame: dom_id(Project.new)} %>
+  <div class="mt-4">
+    <%= turbo_frame_tag dom_id(Project.new) %>
+  </div>
+</div>
 <div id="projects">
   <%= render @projects %>
 </div>
