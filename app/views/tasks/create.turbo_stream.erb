@@ -3,6 +3,7 @@
     <%= render 'tasks/task', task: @task %>
   <% end %>
 <% end %>
+  <%= turbo_stream.remove "#{dom_id(Task.new)}_form" %>
 <%= turbo_stream.prepend "tasks" do %>
   <%= render 'task', task: @task %>
 <% end %>

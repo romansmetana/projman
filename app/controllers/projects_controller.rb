@@ -52,7 +52,7 @@ class ProjectsController < ApplicationController
     respond_to do |format|
       flash[:success] = t('controllers.project.success.destroy')
       format.turbo_stream
-      format.html { redirect_to root_path }
+      redirect_to root_path
     end
   end
 

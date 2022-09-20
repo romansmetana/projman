@@ -9,7 +9,9 @@ class TasksController < ApplicationController
 
   def show; end
 
-  def new; end
+  def new
+    @task = Task.new
+  end
 
   def create
     @task = current_user.tasks.build(task_params)

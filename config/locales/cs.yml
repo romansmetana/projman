@@ -17,8 +17,8 @@ cs:
         title: 'Název tagů'
   
   is_done:
-    false: 'Nedokončeno'
-    true: 'Dokončeno'
+    false: 'Nedokončen'
+    true: 'Dokončen'
 
     errors:
       messages:
