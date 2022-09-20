@@ -42,6 +42,12 @@ class TagsController < ApplicationController
   end
 
   def destroy
+    @tag.destroy
+    respond_to do |format|
+      flash[:success] = t('controllers.tag.success.destroy')
+      format.turbo_stream
+      format.html { redirect_to root_path }
+    end
   end
 
   private
