@@ -10,6 +10,9 @@ cs:
         current_password: 'Aktuální heslo'
       project:
         title: 'Název projektu'
+      task:
+        title: 'Název úkolu'
+        description: 'Popis'
 
     errors:
       messages:
