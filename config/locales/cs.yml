@@ -13,8 +13,10 @@ cs:
       task:
         title: 'Název úkolu'
         description: 'Popis'
+        tags: 'Tagy'
       tag:
         title: 'Název tagů'
+        tag: 'Tag'
   
   is_done:
     false: 'Nedokončen'
@@ -32,11 +34,16 @@ cs:
         create: Projekt byl úspěšně vytvořen
         update: Projekt byl úspěšně aktualizován
         destroy: Projekt byl úspěšně smazán
+      action:
+        create: Přidat nový projekt
+        show: Zobrazit více
     task:
       success:
         create: Úkol byl úspěšně vytvořen
         update: Úkol byl úspěšně aktualizován
         destroy: Úkol byl úspěšně smazán
+      action:
+        create: Přidat nový úkol
     tag:
       success:
         create: Tag byl úspěšně vytvořen
@@ -190,9 +197,10 @@ cs:
       create: Vytvořit účet
       login: Přihlásit se
       update: Aktualizovat
+      delete: Smazat
       project:
         create: Vytvořit projekt
-        delete: Smazat
+        delete: Smazat projekt
       task:
         create: Vytvořit úkol
         delete: Smazat

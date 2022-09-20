@@ -10,8 +10,8 @@
             <%= current_user.name %>
           </a>
           <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-            <li><%= link_to "Edit profile", edit_user_registration_path, class: "dropdown-item" %></li>
-            <li><%= link_to 'Logout', destroy_user_session_path, class: "dropdown-item" %></li>
+            <li><%= link_to t("devise.pages.edit"), edit_user_registration_path, class: "dropdown-item" %></li>
+            <li><%= link_to t("devise.pages.sign_out"), destroy_user_session_path, class: "dropdown-item" %></li>
           </ul>
         <% end %>
       </div>

@@ -57,7 +57,8 @@ cs:
     pages:
       sign_in: Přihlásit se
       sign_up: Zaregistrovat účet
-      edit: Upravit
+      sign_out: Odhlásit se
+      edit: Upravit účet
   errors:
     messages:
       already_confirmed: "byl již potvrzen, prosím, zkuste se přihlásit"

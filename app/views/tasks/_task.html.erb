@@ -25,7 +25,7 @@
             <p><%= button_to t("is_done.true"), task_path(task, task: { is_done: 'true'}), method: :patch,
             class: 'btn btn-sm p-1 bg-success bg-opacity-25 ' %></p>
           <% end %>
-          <p><%= button_to t("helpers.submit.project.delete"), task_path(task), method: :delete,
+          <p><%= button_to t("helpers.submit.delete"), task_path(task), method: :delete,
           class: 'btn btn-sm p-1 bg-danger bg-opacity-10 ' %></p>
         </div>
       </div>
