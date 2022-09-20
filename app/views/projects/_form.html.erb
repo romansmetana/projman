@@ -1,6 +1,8 @@
-
 <%= simple_form_for project, html: { id: "#{dom_id(project)}_form" }  do |f| %>
-    <%= f.input :title %>
-
-    <%= f.submit %>
+  <div class="shadow rounded">
+    <div class="p-3 mt-1">
+      <%= f.input :title %>
+      <%= f.submit %>
+    </div>
+  </div>
 <% end %>

@@ -1,11 +1,11 @@
-<div class="col-sm-6">
+<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 p-2">
   <%= link_to 'Add new project', new_project_path, 
     class: 'btn btn-sm btn-warning', data: {turbo_frame: dom_id(Project.new)} %>
   <div class="mt-4">
     <%= turbo_frame_tag dom_id(Project.new) %>
   </div>
 </div>
-<div id="projects">
+<div class="d-flex flex-wrap col-12" id="projects">
   <%= render @projects %>
 </div>
 <%= render 'tasks/form', task: Task.new %>
