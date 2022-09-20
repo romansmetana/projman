@@ -1,6 +1,6 @@
-<h1>Tags#index</h1>
-<p>Find me in app/views/tags/index.html.erb</p>
-<%= render 'form', tag: Tag.new %>
-<div id="tags">
+<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 p-2">
+  <%= render 'form', tag: Tag.new %>
+  <div class="d-flex flex-wrap col-12" id="tags">
     <%= render @tags %>
+  </div>
 </div>
