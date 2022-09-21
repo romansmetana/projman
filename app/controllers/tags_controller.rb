@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class TagsController < ApplicationController
   before_action :set_tag, only: %i[show edit update destroy]
 
@@ -5,8 +7,7 @@ class TagsController < ApplicationController
     @tags = current_user.tags.all
   end
 
-  def new
-  end
+  def new; end
 
   def create
     @tag = current_user.tags.build(tag_params)
@@ -17,14 +18,13 @@ class TagsController < ApplicationController
       else
         format.turbo_stream do
           render turbo_stream: turbo_stream.replace("#{helpers.dom_id(@tag)}_form", partial: 'form',
-                                                                                     locals: { tag: @tag })
+                                                                                    locals: { tag: @tag })
         end
       end
     end
   end
 
-  def edit
-  end
+  def edit; end
 
   def update
     respond_to do |format|
@@ -35,7 +35,7 @@ class TagsController < ApplicationController
       else
         format.turbo_stream do
           render turbo_stream: turbo_stream.replace("#{helpers.dom_id(@tag)}_form", partial: 'form',
-                                                                                        locals: { tag: @tag })
+                                                                                    locals: { tag: @tag })
         end
       end
     end
@@ -51,9 +51,11 @@ class TagsController < ApplicationController
   end
 
   private
+
   def set_tag
     @tag = current_user.tags.find(params[:id])
   end
+
   def tag_params
     params.require(:tag).permit(:title, :taks_id)
   end

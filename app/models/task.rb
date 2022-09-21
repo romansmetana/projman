@@ -12,7 +12,7 @@ class Task < ApplicationRecord
 
   def self.filter(params)
     tasks = Task.all
-    tasks = tasks.where(project_id: Project.find(params[:project])) if params[:project] && params[:project] != ""
+    tasks = tasks.where(project_id: Project.find(params[:project])) if params[:project] && params[:project] != ''
     tasks = tasks.where(is_done: params[:is_done]) if params[:is_done] && params[:is_done] != 'all'
     tasks
   end
