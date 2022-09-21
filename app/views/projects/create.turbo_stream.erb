@@ -1,0 +1,6 @@
+<%= turbo_stream.prepend "projects" do %>
+  <%= render 'project', project: @project %>
+<% end %>
+<%= turbo_stream.remove "#{dom_id(Project.new)}_form" %>
+
+<%= turbo_stream.update("flash-container", partial: 'shared/alerts') %>

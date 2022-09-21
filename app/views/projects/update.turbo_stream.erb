@@ -1,0 +1,8 @@
+<%= turbo_stream.update "#{dom_id(@project)}_item" do %>
+  <%= render 'show', project: @project %>
+<% end %>
+
+<%= turbo_stream.replace "#{dom_id(Project.new)}_form" do %>
+  <%= render 'form', project: Project.new %>
+<% end %>
+<%= turbo_stream.replace("flash-container", partial: 'shared/alerts') %>

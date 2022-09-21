@@ -1,0 +1,6 @@
+<%= simple_form_for tag, html: { id: "#{dom_id(tag)}_form" }  do |f| %>
+  <%= f.input :title %>
+  <div class="mt-3 form-actions">
+    <%= f.button :submit, class: 'btn bg-warning bg-opacity-25' %>
+  </div>
+<% end %>

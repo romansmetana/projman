@@ -1,0 +1,8 @@
+<%= simple_form_for project, html: { id: "#{dom_id(project)}_form" }  do |f| %>
+  <div class="shadow rounded">
+    <div class="p-3 mt-1">
+      <%= f.input :title %>
+      <%= f.button :submit, class: 'btn bg-warning bg-opacity-25' %>
+    </div>
+  </div>
+<% end %>

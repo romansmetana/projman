@@ -1,0 +1,13 @@
+<div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-12 p-2" id="<%= "#{dom_id(tag)}_item" %>">
+  <%= turbo_frame_tag dom_id(tag) do %>
+    <div class="shadow rounded overflow-hidden">
+      <div class="p-2 m-2">
+        <div class="d-flex justify-content-between align-items-center p-1">
+          <h5 class="mb-0"><%=link_to tag.title, edit_tag_path(tag) %></h5>
+          <%= button_to t("helpers.submit.delete"), tag_path(tag), method: :delete,
+          class: 'btn btn-sm p-2 bg-danger bg-opacity-10 ', form: { data: { turbo_confirm: t("controllers.tag.notification.destroy") } } %>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>

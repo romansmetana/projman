@@ -1,0 +1,7 @@
+<%= turbo_stream.prepend "tags" do %>
+  <%= render 'tag', tag: @tag %>
+<% end %>
+<%= turbo_stream.replace "#{dom_id(Tag.new)}_form" do %>
+  <%= render 'form', tag: Tag.new %>
+<% end %>
+<%= turbo_stream.replace("flash-container", partial: 'shared/alerts') %>

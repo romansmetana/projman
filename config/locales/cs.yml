@@ -8,6 +8,21 @@ cs:
         password: 'Heslo'
         password_confirmation: 'Potvrzení hesla'
         current_password: 'Aktuální heslo'
+      project:
+        title: 'Název projektu'
+      task:
+        title: 'Název úkolu'
+        description: 'Popis'
+        tags: 'Tagy'
+      tag:
+        title: 'Název tagů'
+        tag: 'Tag'
+  
+  is_done:
+    reset: 'Všechny úkoly'
+    all: 'Všechny'
+    false: 'Nedokončen'
+    true: 'Dokončen'
 
     errors:
       messages:
@@ -15,6 +30,33 @@ cs:
         restrict_dependent_destroy:
           has_one: Nemůžu smazat položku protože existuje závislá/ý/é %{record}
           has_many: Nemůžu smazat položku protože existuje závislé/ý %{record}
+  controllers:
+    project:
+      success:
+        create: Projekt byl úspěšně vytvořen
+        update: Projekt byl úspěšně aktualizován
+        destroy: Projekt byl úspěšně smazán
+      action:
+        create: Přidat nový projekt
+        show: Zobrazit více
+      notification:
+        destroy: Pokud smažete projekt, smažou se také všechny jeho úkoly! Chcete pokračovat?
+    task:
+      success:
+        create: Úkol byl úspěšně vytvořen
+        update: Úkol byl úspěšně aktualizován
+        destroy: Úkol byl úspěšně smazán
+      action:
+        create: Přidat nový úkol
+      notification:
+        destroy: Chcete smazat tento úkol?
+    tag:
+      success:
+        create: Tag byl úspěšně vytvořen
+        update: Tag byl úspěšně aktualizován
+        destroy: Tag byl úspěšně smazán
+      notification:
+        destroy: Chcete smazat tento tag?
   date:
     abbr_day_names:
     - Ne
@@ -163,6 +205,17 @@ cs:
       create: Vytvořit účet
       login: Přihlásit se
       update: Aktualizovat
+      delete: Smazat
+      project:
+        create: Vytvořit projekt
+        delete: Smazat projekt
+      task:
+        create: Vytvořit úkol
+        delete: Smazat
+        filter: Filtrovat
+      tag:
+        create: Vytvořit tag
+        delete: Smazat
     links:
       sign_in: Přihlásit se
       sign_up: Vytvořit účet
