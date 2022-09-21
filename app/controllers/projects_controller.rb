@@ -3,7 +3,7 @@
 class ProjectsController < ApplicationController
   before_action :set_project, only: %i[show edit update destroy]
   def index
-    @pagy, @projects = pagy(current_user.projects.all)
+    @pagy, @projects = pagy(current_user.projects.order('position DESC'))
   end
 
   def show; end
