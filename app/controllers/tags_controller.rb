@@ -4,7 +4,7 @@ class TagsController < ApplicationController
   before_action :set_tag, only: %i[show edit update destroy]
 
   def index
-    @tags = current_user.tags.all
+    @pagy, @tags = pagy(current_user.tags.all)
   end
 
   def new; end

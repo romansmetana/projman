@@ -4,7 +4,7 @@ class TasksController < ApplicationController
   before_action :set_task, only: %i[edit update destroy]
 
   def index
-    @tasks = Task.filter(params)
+    @pagy, @tasks = pagy(Task.filter(params, current_user))
   end
 
   def new
