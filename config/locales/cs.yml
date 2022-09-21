@@ -19,6 +19,8 @@ cs:
         tag: 'Tag'
   
   is_done:
+    reset: 'Všechny úkoly'
+    all: 'Všechny'
     false: 'Nedokončen'
     true: 'Dokončen'
 
@@ -210,6 +212,7 @@ cs:
       task:
         create: Vytvořit úkol
         delete: Smazat
+        filter: Filtrovat
       tag:
         create: Vytvořit tag
         delete: Smazat
