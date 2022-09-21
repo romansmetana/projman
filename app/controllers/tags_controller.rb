@@ -1,10 +1,15 @@
 # frozen_string_literal: true
 
 class TagsController < ApplicationController
+  rescue_from ActionController::MissingExactTemplate, with: :catch_error
   before_action :set_tag, only: %i[show edit update destroy]
 
   def index
     @pagy, @tags = pagy(current_user.tags.all)
+  end
+
+  def show
+    
   end
 
   def new; end
@@ -58,5 +63,9 @@ class TagsController < ApplicationController
 
   def tag_params
     params.require(:tag).permit(:title, :taks_id)
+  end
+
+  def catch_error
+    redirect_to root_path
   end
 end

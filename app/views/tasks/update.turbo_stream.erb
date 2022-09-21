@@ -4,6 +4,9 @@
   <% end %>
 <% end %>
 <%= turbo_stream.remove "#{dom_id(Task.new)}_form" %>
+<%= turbo_stream.update "#{dom_id(@task)}_item" do %>
+  <%= render 'task', task: @task %>
+<% end %>
 <%= turbo_stream.prepend "tasks" do %>
   <%= render 'task', task: @task %>
 <% end %>
