@@ -7,7 +7,7 @@ class Task < ApplicationRecord
   has_many :task_tags, dependent: :destroy
   has_many :tags, through: :task_tags
 
-  validates :title, presence: true
+  validates :title, :user_id, presence: true
   validates :description, length: { minimum: 1, maximum: 300 }
 
   def self.filter(params, current_user)
