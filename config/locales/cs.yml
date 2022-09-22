@@ -20,12 +20,6 @@ cs:
       tag:
         title: 'Název tagů'
         tag: 'Tag'
-  
-  is_done:
-    reset: 'Všechny úkoly'
-    all: 'Všechny'
-    false: 'Nedokončen'
-    true: 'Dokončen'
 
     errors:
       messages:
@@ -33,6 +27,12 @@ cs:
         restrict_dependent_destroy:
           has_one: Nemůžu smazat položku protože existuje závislá/ý/é %{record}
           has_many: Nemůžu smazat položku protože existuje závislé/ý %{record}
+
+  is_done:
+    reset: 'Všechny úkoly'
+    all: 'Všechny'
+    false: 'Nedokončen'
+    true: 'Dokončen'
   controllers:
     project:
       success:
