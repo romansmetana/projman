@@ -57,6 +57,8 @@ cs:
         destroy: Tag byl úspěšně smazán
       notification:
         destroy: Chcete smazat tento tag?
+    search:
+      not_found: Napište prosím něco k hledání
   date:
     abbr_day_names:
     - Ne

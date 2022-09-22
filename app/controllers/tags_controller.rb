@@ -5,12 +5,10 @@ class TagsController < ApplicationController
   before_action :set_tag, only: %i[show edit update destroy]
 
   def index
-    @pagy, @tags = pagy(current_user.tags.all)
+    @pagy, @tags = pagy(current_user.tags)
   end
 
-  def show
-    
-  end
+  def show; end
 
   def new; end
 
@@ -51,7 +49,6 @@ class TagsController < ApplicationController
     respond_to do |format|
       flash[:success] = t('controllers.tag.success.destroy')
       format.turbo_stream
-      format.html { redirect_to root_path }
     end
   end
 

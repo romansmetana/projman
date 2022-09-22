@@ -7,9 +7,7 @@ class TasksController < ApplicationController
     @pagy, @tasks = pagy(Task.filter(params, current_user))
   end
 
-  def show
-    
-  end
+  def show; end
 
   def new
     @task = Task.new

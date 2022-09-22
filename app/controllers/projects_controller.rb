@@ -8,8 +8,6 @@ class ProjectsController < ApplicationController
 
   def show; end
 
-  def edit; end
-
   def new
     @project = Project.new
   end
