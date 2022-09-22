@@ -10,6 +10,7 @@ RSpec.describe Task, type: :model do
 
   describe "|| when task was deleted" do
     it "# the user will not be deleted" do
+      Task.destroy_all
       expect(user).to have_attributes(:name => user.name, :surname => user.surname)
     end
     it "# all projects are not deleted " do
