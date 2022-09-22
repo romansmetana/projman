@@ -16,19 +16,19 @@ user = User.create(
 )
 
 project = Project.create(
-  title: 'To-do list',
+  title: Faker::Lorem.word,
   position: 1,
   user_id: user.id
 )
 
 tag = Tag.create(
-  title: 'test',
+  title: Faker::Lorem.word,
   user_id: user.id
 )
 
 task = Task.create(
-  title: 'Make to-do list',
-  description: 'You need to created todo model',
+  title: Faker::Lorem.word,
+  description: Faker::Lorem.sentence,
   is_done: false,
   user_id: user.id,
   project_id: project.id

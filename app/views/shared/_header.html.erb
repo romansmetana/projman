@@ -5,19 +5,19 @@
     </div>
     <div class="col-lg-4 ">
       <div class="h-100 d-flex justify-content-around align-items-center">
-        <small><%= link_to 'Projects', root_path, class: "h6 fw-light text-dark text-decoration-none link-light" %></small>
-        <small><%= link_to 'Tasks', tasks_path, class: "h6 fw-light text-dark text-decoration-none link-light" %></small>
-        <small><%= link_to 'Tags', tags_path, class: "h6 fw-light text-dark text-decoration-none link-light" %></small>
+        <small><%= link_to t("activerecord.attributes.projects"), root_path, class: "h6 fw-light text-dark text-decoration-none link-light" %></small>
+        <small><%= link_to t("activerecord.attributes.tasks"), tasks_path, class: "h6 fw-light text-dark text-decoration-none link-light" %></small>
+        <small><%= link_to t("activerecord.attributes.tags"), tags_path, class: "h6 fw-light text-dark text-decoration-none link-light" %></small>
       </div>
     </div>
-    <div class="col-lg-4 d-flex align-items-center justify-content-end pe-4 gap-2">
-      <div class="input-group rounded">
-        <%= form_with url: searches_search_path, method: :post do |f| %>
-          <%= f.search_field :title, {class: "form-control rounded",placeholder: t("helpers.submit.search"), oninput: "this.form.requestSubmit()"} %>
-        <% end %>
-      </div>
-      <div class="own-drop dropdown">
-        <% if user_signed_in? %>
+    <% if user_signed_in? %>
+      <div class="col-lg-4 d-flex align-items-center justify-content-end pe-4 gap-2">
+        <div class="input-group rounded">
+          <%= form_with url: searches_search_path, method: :post do |f| %>
+            <%= f.search_field :title, {class: "form-control rounded",placeholder: t("helpers.submit.search"), oninput: "this.form.requestSubmit()"} %>
+          <% end %>
+        </div>
+        <div class="own-drop dropdown">
           <a class="h4 fw-light own-drop-link tn dropdown-toggle text-white" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
             <%= current_user.name %>
           </a>
@@ -25,8 +25,8 @@
             <li><%= link_to t("devise.pages.edit"), edit_user_registration_path, class: "dropdown-item" %></li>
             <li><%= link_to t("devise.pages.sign_out"), destroy_user_session_path, class: "dropdown-item" %></li>
           </ul>
-        <% end %>
+        </div>
       </div>
-    </div>
+    <% end %>
   </div>
 </div>

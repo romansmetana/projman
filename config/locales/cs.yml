@@ -1,6 +1,9 @@
 cs:
   activerecord:
     attributes:
+      projects: Projecty
+      tasks: Úkoly
+      tags: Tagy
       user:
         name: 'Jméno'
         surname: 'Příjmení'
