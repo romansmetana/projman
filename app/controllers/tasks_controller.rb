@@ -50,7 +50,6 @@ class TasksController < ApplicationController
     respond_to do |format|
       flash[:success] = t('controllers.task.success.destroy')
       format.turbo_stream
-      redirect_to root_path
     end
   end
 

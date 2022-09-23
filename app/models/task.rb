@@ -12,6 +12,9 @@ class Task < ApplicationRecord
 
   def self.filter(params, current_user)
     tasks = current_user.tasks
+    tasks = tasks.includes(:project)
+    tasks = tasks.includes(:task_tags)
+    tasks = tasks.includes(:tags)
     if params[:project] && params[:project] != ''
       tasks = tasks.where(project_id: current_user.projects.find(params[:project]))
     end

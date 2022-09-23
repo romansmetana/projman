@@ -12,9 +12,11 @@ gem 'devise'
 
 gem 'pagy'
 
-gem "slim"
+gem 'slim'
 
 gem 'simple_form'
+
+gem 'bullet', group: 'development'
 
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem 'sprockets-rails'
