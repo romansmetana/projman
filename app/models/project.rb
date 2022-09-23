@@ -3,7 +3,7 @@
 class Project < ApplicationRecord
   belongs_to :user
   has_many :tasks, dependent: :destroy
-  before_save :set_position
+  before_create :set_position
 
   validates :title, presence: true
   validates :position, numericality: { only_integer: true }
