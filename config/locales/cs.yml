@@ -61,6 +61,9 @@ cs:
       notification:
         destroy: Chcete smazat tento tag?
     search:
+      project: Project
+      task: Úkol 
+      tag: Tag
       not_found: Napište prosím něco k hledání
   date:
     abbr_day_names:
