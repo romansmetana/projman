@@ -12,6 +12,8 @@ gem 'devise'
 
 gem 'pagy'
 
+gem "slim"
+
 gem 'simple_form'
 
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
