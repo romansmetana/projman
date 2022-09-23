@@ -9,22 +9,22 @@ RSpec.describe TasksController, type: :controller do
 
   before { sign_in(user) }
 
-  describe 'GET /index' do
-    it 'returns http success' do
+  describe '|| GET /index' do
+    it '# returns http success' do
       get :index, params: { project: project.id, is_done: false }
       expect(response).to have_http_status(:success)
     end
   end
 
-  describe 'GET /show' do
-    it 'returns http success' do
+  describe '|| GET /show' do
+    it '# returns http success' do
       get :show, params: { id: task.id }
       expect(response).to have_http_status(:success)
     end
   end
 
-  describe 'GET /new' do
-    it 'returns http success' do
+  describe '|| GET /new' do
+    it '# returns http success' do
       get :new
       expect(response).to have_http_status(:success)
     end
@@ -51,8 +51,8 @@ RSpec.describe TasksController, type: :controller do
     end
   end
 
-  describe 'GET /edit' do
-    it 'returns http success' do
+  describe '|| GET /edit' do
+    it '# returns http success' do
       get :edit, params: { id: task.id }
       expect(response).to have_http_status(:success)
     end
@@ -62,21 +62,21 @@ RSpec.describe TasksController, type: :controller do
     let(:params) { { task: { title: 'New title' }, id: task.id } }
     let(:invalid_params) { { task: { title: nil }, id: task.id } }
 
-    it 'returns http success' do
+    it '# task was successfully updeted' do
       put :update, format: :turbo_stream, params: params
       expect(response).to have_http_status(:success)
     end
 
-    it 'returns http success' do
+    it '# task was not successfully updeted' do
       put :update, format: :turbo_stream, params: invalid_params
       expect(response).to have_http_status(:success)
     end
   end
 
   describe 'DELETE /destroy' do
-    it 'returns http success' do
+    it '# returns http success' do
       delete :destroy, format: :turbo_stream, params: { id: task.id }
-      expect(response).to have_http_status(:found)
+      expect(response).to have_http_status(:success)
     end
   end
 end

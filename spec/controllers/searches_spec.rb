@@ -8,13 +8,13 @@ RSpec.describe SearchesController, type: :controller do
 
   before { sign_in(user) }
 
-  describe 'POST /search' do
-    it 'when parameters are not equal to ""' do
+  describe '|| POST /search' do
+    it '# when parameters are not equal to ""' do
       post :search, format: :turbo_stream, params: { title: project.title }
       expect(response).to have_http_status(:success)
     end
 
-    it 'when parameters - ""' do
+    it '# when parameters - ""' do
       post :search, format: :turbo_stream, params: { title: '' }
       expect(response).to have_http_status(:success)
     end

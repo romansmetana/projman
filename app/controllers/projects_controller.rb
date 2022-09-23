@@ -3,7 +3,11 @@
 class ProjectsController < ApplicationController
   before_action :set_project, only: %i[show edit update destroy]
   def index
-    @pagy, @projects = pagy(current_user.projects.order('position DESC'))
+    @pagy, @projects = if params[:direction]
+                          pagy(current_user.projects.order("#{params[:sort]} #{params[:direction]}"))
+                        else
+                          pagy(current_user.projects.order("position DESC"))
+                        end
   end
 
   def show; end

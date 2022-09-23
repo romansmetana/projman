@@ -8,28 +8,28 @@ RSpec.describe TagsController, type: :controller do
 
   before { sign_in(user) }
 
-  describe 'GET /index' do
-    it 'returns http success' do
+  describe '|| GET /index' do
+    it '# returns http success' do
       get :index
       expect(response).to have_http_status(:success)
     end
   end
 
-  describe 'GET /index' do
-    it 'returns http success' do
+  describe '|| GET /index' do
+    it '# returns http success' do
       get :show, params: { id: tag.id }
       expect(response).to have_http_status(:found)
     end
   end
 
-  describe 'GET /new' do
-    it 'returns http success' do
+  describe '|| GET /new' do
+    it '# returns http success' do
       get :new
       expect(response).to have_http_status(:success)
     end
   end
 
-  describe 'POST /create' do
+  describe '|| POST /create' do
     let(:valid_params) do
       { tag: { title: 'Test', user_id: user.id } }
     end
@@ -48,30 +48,30 @@ RSpec.describe TagsController, type: :controller do
     end
   end
 
-  describe 'GET /edit' do
+  describe '|| GET /edit' do
     it 'returns http success' do
       get :edit, params: { id: tag.id }
       expect(response).to have_http_status(:success)
     end
   end
 
-  describe 'PUT /update' do
+  describe '|| PUT /update' do
     let(:params) { { tag: { title: 'New title' }, id: tag.id } }
     let(:invalid_params) { { tag: { title: nil }, id: tag.id } }
 
-    it 'returns http success' do
+    it '# tag was successfully updeted' do
       put :update, format: :turbo_stream, params: params
       expect(response).to have_http_status(:success)
     end
 
-    it 'returns http success' do
+    it '# tag was not successfully updeted' do
       put :update, format: :turbo_stream, params: invalid_params
       expect(response).to have_http_status(:success)
     end
   end
 
-  describe 'DELETE /destroy' do
-    it 'returns http success' do
+  describe '|| DELETE /destroy' do
+    it '# returns http success' do
       delete :destroy, format: :turbo_stream, params: { id: tag.id }
       expect(response).to have_http_status(:ok)
     end
