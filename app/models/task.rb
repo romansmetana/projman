@@ -4,7 +4,7 @@ class Task < ApplicationRecord
   belongs_to :user, optional: true
   belongs_to :project, optional: true
 
-  has_many :task_tags, dependent: :destroy
+  has_many :task_tags, dependent: :delete_all
   has_many :tags, through: :task_tags
 
   validates :title, :user_id, presence: true
@@ -13,8 +13,8 @@ class Task < ApplicationRecord
   def self.filter(params, current_user)
     tasks = current_user.tasks
     tasks = tasks.includes(:project)
-    tasks = tasks.includes(:task_tags)
     tasks = tasks.includes(:tags)
+    tasks = tasks.includes(:task_tags)
     if params[:project] && params[:project] != ''
       tasks = tasks.where(project_id: current_user.projects.find(params[:project]))
     end

@@ -9,6 +9,7 @@ module ApplicationHelper
                 else
                   'ASC'
                 end
-    link_to direction == 'ASC' ? title ||= "nejnovější".titleize : "nejstarší".titleize, sort: column, direction: direction
+    link_to direction == 'ASC' ? title ||= 'nejnovější'.titleize : 'nejstarší'.titleize, sort: column,
+                                                                                         direction: direction
   end
 end

@@ -13,8 +13,9 @@ RSpec.describe ProjectsController, type: :controller do
       get :index
       expect(response).to have_http_status(:success)
     end
+
     it '# returns http success if params[:direction]' do
-      get :index, params: {column:"position", direction: "DESC"}
+      get :index, params: { column: 'position', direction: 'DESC' }
       expect(response).to have_http_status(:success)
     end
   end
