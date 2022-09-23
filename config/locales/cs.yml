@@ -1,6 +1,9 @@
 cs:
   activerecord:
     attributes:
+      projects: Projecty
+      tasks: Úkoly
+      tags: Tagy
       user:
         name: 'Jméno'
         surname: 'Příjmení'
@@ -17,12 +20,6 @@ cs:
       tag:
         title: 'Název tagů'
         tag: 'Tag'
-  
-  is_done:
-    reset: 'Všechny úkoly'
-    all: 'Všechny'
-    false: 'Nedokončen'
-    true: 'Dokončen'
 
     errors:
       messages:
@@ -30,6 +27,12 @@ cs:
         restrict_dependent_destroy:
           has_one: Nemůžu smazat položku protože existuje závislá/ý/é %{record}
           has_many: Nemůžu smazat položku protože existuje závislé/ý %{record}
+
+  is_done:
+    reset: 'Všechny úkoly'
+    all: 'Všechny'
+    false: 'Nedokončen'
+    true: 'Dokončen'
   controllers:
     project:
       success:
@@ -57,6 +60,8 @@ cs:
         destroy: Tag byl úspěšně smazán
       notification:
         destroy: Chcete smazat tento tag?
+    search:
+      not_found: Napište prosím něco k hledání
   date:
     abbr_day_names:
     - Ne
@@ -202,6 +207,7 @@ cs:
     select:
       prompt: Prosím vyberte si
     submit:
+      search: Hledat
       create: Vytvořit účet
       login: Přihlásit se
       update: Aktualizovat

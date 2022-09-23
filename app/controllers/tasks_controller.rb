@@ -1,11 +1,13 @@
 # frozen_string_literal: true
 
 class TasksController < ApplicationController
-  before_action :set_task, only: %i[edit update destroy]
+  before_action :set_task, only: %i[show edit update destroy]
 
   def index
     @pagy, @tasks = pagy(Task.filter(params, current_user))
   end
+
+  def show; end
 
   def new
     @task = Task.new
@@ -48,7 +50,6 @@ class TasksController < ApplicationController
     respond_to do |format|
       flash[:success] = t('controllers.task.success.destroy')
       format.turbo_stream
-      format.html { redirect_to root_path }
     end
   end
 

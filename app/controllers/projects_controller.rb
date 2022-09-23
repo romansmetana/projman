@@ -3,12 +3,14 @@
 class ProjectsController < ApplicationController
   before_action :set_project, only: %i[show edit update destroy]
   def index
-    @pagy, @projects = pagy(current_user.projects.all)
+    @pagy, @projects = if params[:direction]
+                          pagy(current_user.projects.order("#{params[:sort]} #{params[:direction]}"))
+                        else
+                          pagy(current_user.projects.order("position DESC"))
+                        end
   end
 
   def show; end
-
-  def edit; end
 
   def new
     @project = Project.new
@@ -52,7 +54,6 @@ class ProjectsController < ApplicationController
     respond_to do |format|
       flash[:success] = t('controllers.project.success.destroy')
       format.turbo_stream
-      redirect_to root_path
     end
   end
 
