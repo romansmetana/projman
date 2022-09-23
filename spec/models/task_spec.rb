@@ -42,6 +42,14 @@ RSpec.describe Task, type: :model do
     end
   end
 
+
+  describe "|| when user want to fliter tasks" do
+    it '# sent params' do
+      params = {project: project.id, is_done: false}
+      expect(Task.filter(params, user)).to match_array( project.tasks )
+    end
+  end
+
   describe '|| when task validation was failed' do
     it '# task is not a valid without a title' do
       task.title = nil
