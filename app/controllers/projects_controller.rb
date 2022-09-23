@@ -4,13 +4,17 @@ class ProjectsController < ApplicationController
   before_action :set_project, only: %i[show edit update destroy]
   def index
     @pagy, @projects = if params[:direction]
-                          pagy(current_user.projects.order("#{params[:sort]} #{params[:direction]}"))
-                        else
-                          pagy(current_user.projects.order("position DESC"))
-                        end
+                         pagy(current_user.projects.order("#{params[:sort]} #{params[:direction]}"))
+                       else
+                         pagy(current_user.projects.order('position DESC'))
+                       end
   end
 
-  def show; end
+  def show
+    @tasks = Task.where(user_id: current_user.id)
+    @tasks = @tasks.includes([:project]).where(project_id: @project.id)
+    @tasks = @tasks.includes(:task_tags, :tags)
+  end
 
   def new
     @project = Project.new

@@ -18,7 +18,7 @@ RSpec.describe TagsController, type: :controller do
   describe '|| GET /index' do
     it '# returns http success' do
       get :show, params: { id: tag.id }
-      expect(response).to have_http_status(:found)
+      expect(response).to have_http_status(:success)
     end
   end
 
