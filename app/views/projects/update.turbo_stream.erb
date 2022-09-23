@@ -1,5 +1,5 @@
 <%= turbo_stream.update "#{dom_id(@project)}_item" do %>
-  <%= render 'show', project: @project %>
+ <%= render 'project_tasks', project: @project, tasks: @tasks %>
 <% end %>
 
 <%= turbo_stream.replace "#{dom_id(Project.new)}_form" do %>

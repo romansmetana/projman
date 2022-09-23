@@ -2,6 +2,7 @@
 
 class ProjectsController < ApplicationController
   before_action :set_project, only: %i[show edit update destroy]
+  before_action :set_tasks, only: %i[show edit update]
   def index
     @pagy, @projects = if params[:direction]
                          pagy(current_user.projects.order("#{params[:sort]} #{params[:direction]}"))
@@ -10,11 +11,7 @@ class ProjectsController < ApplicationController
                        end
   end
 
-  def show
-    @tasks = Task.where(user_id: current_user.id)
-    @tasks = @tasks.includes([:project]).where(project_id: @project.id)
-    @tasks = @tasks.includes(:task_tags, :tags)
-  end
+  def show; end
 
   def new
     @project = Project.new
@@ -22,7 +19,6 @@ class ProjectsController < ApplicationController
 
   def create
     @project = current_user.projects.build(project_params)
-    @project.set_position
     respond_to do |format|
       if @project.save
         flash[:success] = t('controllers.project.success.create')
@@ -65,6 +61,12 @@ class ProjectsController < ApplicationController
 
   def set_project
     @project = current_user.projects.find(params[:id])
+  end
+
+  def set_tasks
+    @tasks = Task.where(user_id: current_user.id)
+    @tasks = @tasks.includes([:project]).where(project_id: @project.id)
+    @tasks = @tasks.includes(:task_tags, :tags)
   end
 
   def project_params
