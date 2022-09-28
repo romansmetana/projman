@@ -1,7 +1,7 @@
 <%= simple_form_for task, html: { id: "#{dom_id(task)}_form" }  do |f| %>
   <%= f.input :title %>
   <%= f.input :description %>
-  <%= f.association :tags %>
-  <%= f.association :project %>
+  <%= f.association :tags, collection: current_user.tags %>
+  <%= f.association :project, collection: current_user.projects %>
   <%= f.button :submit, class: 'btn bg-warning bg-opacity-25' %>
 <% end %>
