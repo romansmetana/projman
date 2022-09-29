@@ -17,6 +17,7 @@ cs:
         title: 'Název úkolu'
         description: 'Popis'
         tags: 'Tagy'
+        file: 'Soubor'
       tag:
         title: 'Název tagů'
         tag: 'Tag'

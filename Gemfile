@@ -19,6 +19,7 @@ gem 'simple_form'
 gem 'bullet', group: 'development'
 
 gem 'carrierwave'
+gem 'carrierwave-i18n'
 
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem 'sprockets-rails'
