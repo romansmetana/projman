@@ -4,7 +4,7 @@
   <%= f.association :tags, collection: current_user.tags %>
   <%= f.association :project, collection: current_user.projects %>
   <div class="my-3">
-    <%= f.input :file %>
+    <%= f.input :file, input_html: { class: 'form-control' } %>
   </div>
   <%= f.button :submit, class: 'btn bg-warning bg-opacity-25' %>
 <% end %>
