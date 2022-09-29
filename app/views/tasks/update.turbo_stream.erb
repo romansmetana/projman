@@ -2,17 +2,16 @@
   <%= turbo_stream.prepend "#{dom_id(@task.project)}_tasks" do %>
     <%= render 'tasks/task', task: @task %>
   <% end %>
-<% else %>
-  <%= turbo_stream.remove("#{dom_id(@task.project)}_tasks") %>
 <% end %>
-<%= turbo_stream.remove "#{dom_id(Task.new)}_form" %>
+
 <%= turbo_stream.replace "#{dom_id(@task)}_item" do %>
   <%= render 'task', task: @task %>
 <% end %>
-<%= turbo_stream.prepend "tasks" do %>
-  <%= render 'task', task: @task %>
-<% end %>
+
+<%= turbo_stream.remove "#{dom_id(Task.new)}_form" %>
+
 <%= turbo_stream.replace "#{dom_id(Task.new)}_form" do %>
   <%= render 'form', task: Task.new %>
 <% end %>
+
 <%= turbo_stream.replace("flash-container", partial: 'shared/alerts') %>

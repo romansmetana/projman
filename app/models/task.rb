@@ -1,7 +1,8 @@
 # frozen_string_literal: true
 
 class Task < ApplicationRecord
-  belongs_to :user, optional: true
+  mount_uploader :file, FileUploader
+  belongs_to :user
   belongs_to :project, optional: true
 
   has_many :task_tags, dependent: :delete_all

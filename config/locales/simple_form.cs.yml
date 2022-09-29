@@ -26,7 +26,7 @@ cs:
     hints:
       defaults:
         edit:
-          username: 'User name to sign in.'
+          username: 'Uživatelské jméno pro přihlášení'
           password: "Vaše nové heslo"
           password_confirmation: "Potvrďte své nové heslo"
           current_password: "Potřebujeme vaše aktuální heslo k potvrzení vašich změn"

@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class TasksController < ApplicationController
-  before_action :set_task, only: %i[show edit update destroy]
+  before_action :set_task, only: %i[download_file show edit update destroy]
 
   def index
     @pagy, @tasks = pagy(Task.filter(params, current_user))
@@ -53,13 +53,21 @@ class TasksController < ApplicationController
     end
   end
 
+  def download_file
+    send_file @task.file.path,
+          :filename => @task.file_identifier,
+          :type => @task.file.content_type,
+          :x_sendfile => true,
+          :disposition => 'attachment'
+  end
+
   private
 
   def set_task
-    @task = current_user.tasks.find(params[:id])
+    @task = current_user.tasks.find(params[:id] || params[:task_id])
   end
 
   def task_params
-    params.require(:task).permit(:title, :description, :is_done, :project_id, tag_ids: [])
+    params.require(:task).permit(:title, :description, :is_done, :file, :project_id, tag_ids: [])
   end
 end
