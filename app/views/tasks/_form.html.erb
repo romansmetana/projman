@@ -3,5 +3,6 @@
   <%= f.input :description %>
   <%= f.association :tags, collection: current_user.tags %>
   <%= f.association :project, collection: current_user.projects %>
+  <%= f.input :file, as: :file %>
   <%= f.button :submit, class: 'btn bg-warning bg-opacity-25' %>
 <% end %>

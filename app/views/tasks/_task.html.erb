@@ -22,19 +22,20 @@
             <% end %>
           </div>
           <p class="text-secondary"><%= task.description %></p>
-        </div>
-        <div class="col-6 d-flex justify-content-end align-items-center gap-1">
-          <% if task.is_done? %>
-            <p><%= button_to t("is_done.false"), task_path(task, task: { is_done: 'false'}), method: :patch,
+          <%= link_to task.file_identifier, task_download_file_path(task), target: '_self'  if task.file? %>
+          </div>
+          <div class="col-6 d-flex justify-content-end align-items-center gap-1">
+            <% if task.is_done? %>
+              <p><%= button_to t("is_done.false"), task_path(task, task: { is_done: 'false'}), method: :patch,
             class: 'btn btn-sm p-1 bg-secondary bg-opacity-25 ' %></p>
-          <% else %>
-            <p><%= button_to t("is_done.true"), task_path(task, task: { is_done: 'true'}), method: :patch,
+            <% else %>
+              <p><%= button_to t("is_done.true"), task_path(task, task: { is_done: 'true'}), method: :patch,
             class: 'btn btn-sm p-1 bg-success bg-opacity-25 ' %></p>
-          <% end %>
-          <p><%= button_to t("helpers.submit.delete"), task_path(task), method: :delete,
+            <% end %>
+            <p><%= button_to t("helpers.submit.delete"), task_path(task), method: :delete,
           class: 'btn btn-sm p-1 bg-danger bg-opacity-10 ', form: { data: { turbo_confirm: t("controllers.task.notification.destroy") } } %></p>
+          </div>
         </div>
       </div>
-    </div>
-  <% end %>
-</ul>
+    <% end %>
+  </ul>

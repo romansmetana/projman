@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 class Task < ApplicationRecord
+  mount_uploader :file, FileUploader
   belongs_to :user
   belongs_to :project, optional: true
 
